@@ -36,7 +36,7 @@ model = mlflow.pyfunc.load_model(model_uri)
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json(force=True)
-    prediction = model.predict([data])
+    prediction = model.predict([list(data.values())])
     return jsonify(prediction=prediction[0])
 
 if __name__ == '__main__':
