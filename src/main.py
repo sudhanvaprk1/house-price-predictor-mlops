@@ -35,9 +35,20 @@ model = mlflow.pyfunc.load_model(model_uri)
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    data = request.get_json(force=True)
-    prediction = model.predict([list(data.values())])
-    return jsonify(prediction=prediction[0])
+    try:
+        # Ensure the request content type is JSON
+        if request.is_json:
+            # Parse the JSON data
+            data = request.get_json()
+            
+            # Assume 'model' is your pre-trained model loaded elsewhere in your code
+            prediction = model.predict([list(data.values())])
+            
+            return jsonify(prediction=prediction[0])
+        else:
+            return jsonify(error="Invalid content type, expecting JSON"), 400
+    except Exception as e:
+        return jsonify(error=str(e)), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
