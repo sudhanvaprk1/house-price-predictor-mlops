@@ -10,11 +10,8 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r env/requirements.txt
 
-# Expose port 5000
+# Expose port 5001
 EXPOSE 5000
 
-# Define environment variable
-ENV NAME World
-
 # Run app.py when the container launches
-CMD ["python", "app.py"]
+CMD ["python", "src/main.py"]
