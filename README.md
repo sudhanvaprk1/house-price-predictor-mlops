@@ -1,4 +1,4 @@
-# MLOps Assignment M2 - House Price Predictor Flask Application
+# MLOps Assignment M3 - House Price Predictor Flask Application
 
 This repository contains a Flask application that tunes a Random Forest Regressor using Optuna, logs the model using MLflow, and uses this model to predict house prices. The application runs in a Docker container.
 
