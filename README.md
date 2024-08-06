@@ -111,14 +111,19 @@ Address any feedback by making further commits to the feature branch and pushing
 
 #### 8. Merge Pull Request
 
+![docker_hub_deployed_image](https://github.com/user-attachments/assets/77a94270-7228-41fd-8a72-fbf802c1026a)
+
 Once the pull request is reviewed and approved, merge it into the main branch (or the target branch). We can do this on GitHub by clicking the "Merge pull request" button.
 
 Push Event: When you push changes to any branch, it can trigger workflows defined for push events. For example, if you push to the main branch, it will trigger workflows configured for push events on main.
 
+#### screen shot - Github Action workflow 
+![github_action_workflow](https://github.com/user-attachments/assets/3a9bf108-239f-4e12-9a29-a896187c9d2e)
 Pull Request Event: Creating or updating a pull request can trigger workflows defined for pull_request events. This allows for testing and validation of code before it gets merged into the main branch.
 
 By following these steps, you ensure a smooth workflow in version control with GitHub, integrating automated CI/CD processes through GitHub Actions.
-
+##### screen shot of DockerHub - deployed container image 
+![docker_hub_deployed_image](https://github.com/user-attachments/assets/77a94270-7228-41fd-8a72-fbf802c1026a)
 #### Github Action workflow explanation 
 ```
 on:
