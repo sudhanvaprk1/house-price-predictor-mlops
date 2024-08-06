@@ -79,8 +79,47 @@ docker run -p 5000:5000 flask-ml-app
 
 This will start the Flask application and make it accessible at http://localhost:5000.
 
-#### Using GitHubAction workflow to trigger the CI/CD pipeline 
+## Using GitHubAction workflow to trigger the CI/CD pipeline 
 
+#### Version Control Steps in GitHub
+#### 1. Create a New Branch
+
+Before making changes, we usually create a new branch from main (or another base branch). This helps in isolating your changes and makes it easier to manage different features or fixes.
+Command: git checkout -b new-feature-branch
+#### 2. Make Changes
+
+Edit, add, or delete files as necessary for your feature or fix.
+Stage Changes
+
+#### 3. Add the changes to the staging area to prepare them for commit.
+Command: git add . (or specify individual files)
+Commit Changes
+
+#### 4. Commit the staged changes with a meaningful message describing what has been done.
+Command: git commit -m "Add feature X and fix bug Y"
+Push Changes
+
+#### 5. Push the commits from your local branch to the remote repository on GitHub.
+Command: git push origin new-feature-branch
+Create a Pull Request (PR)
+
+#### 6. On GitHub, we navigate to the repository's Pull Requests section and create a new pull request from the feature branch to the main branch (or another target branch).
+This will trigger the GitHub Actions workflow if configured to run on pull requests.
+#### 7.Review and Address Feedback
+Reviewers will review the pull request, provide feedback, and request changes if necessary.
+Address any feedback by making further commits to the feature branch and pushing those changes.
+
+#### 8. Merge Pull Request
+
+Once the pull request is reviewed and approved, merge it into the main branch (or the target branch). We can do this on GitHub by clicking the "Merge pull request" button.
+
+Push Event: When you push changes to any branch, it can trigger workflows defined for push events. For example, if you push to the main branch, it will trigger workflows configured for push events on main.
+
+Pull Request Event: Creating or updating a pull request can trigger workflows defined for pull_request events. This allows for testing and validation of code before it gets merged into the main branch.
+
+By following these steps, you ensure a smooth workflow in version control with GitHub, integrating automated CI/CD processes through GitHub Actions.
+
+#### Github Action workflow explanation 
 ```
 on:
   push:
