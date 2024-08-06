@@ -18,7 +18,9 @@ jobs:
       run: docker build . -t 399622/house-price-predictor:latest --file Dockerfile --tag my-image-name:$(date +%s)
   
     - name: Publish Docker Image
-      run: docker push 399622/house-price-predictor:latest
+      run: |
+        docker login -u 399622 -p ${{ secrets.DOCKER_HUB_TOKEN}}
+        docker push 399622/house-price-predictor:latest
 
 
   
