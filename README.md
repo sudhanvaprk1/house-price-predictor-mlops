@@ -5,18 +5,28 @@ This repository contains a Flask application that tunes a Random Forest Regresso
 ## Repository Structure
 
 ```
+├── .github
+│ └── workflows
+│ └── ci-cd.yml # GitHub Actions workflow for CI/CD pipeline
 ├── env
-│   ├── requirements.txt       # Python dependencies
-│   └── environment.yml        # Conda environment configuration
+│ ├── requirements.txt # Python dependencies
+│ └── environment.yml # Conda environment configuration
 ├── src
-│   ├── main.py                # Flask application code
-│   └── ml_workflow.py         # Sample ML workflow code
-├── Dockerfile                 # Dockerfile for creating Docker image
-└── README.md                  # Project overview and setup instructions
+│ ├── get_data.py # Script to fetch and load data
+│ ├── feature_engineering.py # Script for feature engineering
+│ ├── process_data.py # Script for processing data
+│ ├── train_model.py # Script to train the model
+│ ├── hyperparameter_tuning.py # Script for hyperparameter tuning using Optuna
+│ └── main.py # Flask application code
+├── Dockerfile # Dockerfile for creating Docker image
+└── README.md # Project overview and setup instructions
 ```
 
 
 ## Description
+
+- **.github/workflows**: Contains the GitHub Actions workflows.
+  - `ci-cd.yml`: Defines the CI/CD pipeline, including stages for linting, formatting, and deploying the Docker image.
 
 - **env**: Contains files for setting up the development environment.
   - `requirements.txt`: Lists the Python dependencies required for the project.
