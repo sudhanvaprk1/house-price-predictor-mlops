@@ -23,16 +23,16 @@ jobs:
         pip install flake8 black autopep8
     - name: Lint with flake8
       run: |
-        flake8 app --exit-zero
+        flake8 src --exit-zero
     - name: Auto-fix lint errors with autopep8
       run: |
-        autopep8 --in-place --aggressive --aggressive --recursive app
+        autopep8 --in-place --aggressive --aggressive --recursive src
     - name: Auto format with black
       run: |
-        black app
+        black src
     - name: Verify code format
       run: |
-        black --check app
+        black --check src
 
   build-and-push:
     runs-on: ubuntu-latest
